@@ -1,6 +1,3 @@
-const array = [5, 9, 2, 1, 6, 10, 4, 8, 7, 3];
-console.log(array);
-
 function insertion(arr) {
   const len = arr.length;
   for (let i = 1; i < len; i++) {
@@ -13,4 +10,4 @@ function insertion(arr) {
   return arr;
 }
 
-console.log(insertion(array));
+module.exports = insertion;
