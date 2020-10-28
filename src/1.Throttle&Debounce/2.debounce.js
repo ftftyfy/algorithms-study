@@ -1,10 +1,12 @@
 function debounce(func, delay) {
   let timeout = null;
-  return function () {
+  return function (...args) {
     if (timeout !== null) {
       clearTimeout(timeout);
     }
-    timeout = setTimeout(func, delay);
+    timeout = setTimeout(() => {
+      func.apply(this, args);
+    }, delay);
   };
 }
 

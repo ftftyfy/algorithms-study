@@ -1,4 +1,4 @@
-function throttle(func, delay) {
+function throttle1(func, delay) {
   let prev = Date.now();
   return function (...args) {
     const now = Date.now();
@@ -9,8 +9,21 @@ function throttle(func, delay) {
   };
 }
 
+function throttle2(func, delay) {
+  let timeout = null;
+  return function (...args) {
+    if (!timeout) {
+      timeout = setTimeout(() => {
+        timeout = null;
+        func.apply(this, args);
+      }, delay);
+    }
+  };
+}
+
 function handle() {
   console.log(Math.random());
 }
 
-window.addEventListener("scroll", throttle(handle, 1000));
+window.addEventListener("scroll", throttle1(handle, 1000));
+window.addEventListener("scroll", throttle2(handle, 1000));
