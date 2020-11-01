@@ -1,7 +1,7 @@
-function bubble(arr) {
+function insertionSort(arr) {
   const len = arr.length;
-  for (let i = 0; i < len - 1; i++) {
-    for (let j = 0; j < len - 1 - i; j++) {
+  for (let i = 1; i < len; i++) {
+    for (let j = i - 1; j >= 0; j--) {
       if (arr[j] > arr[j + 1]) {
         [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
       }
@@ -10,4 +10,4 @@ function bubble(arr) {
   return arr;
 }
 
-module.exports = bubble;
+module.exports = insertionSort;

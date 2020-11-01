@@ -1,4 +1,4 @@
-function selection(arr) {
+function selectionSort(arr) {
   const len = arr.length;
   for (let i = 0; i < len - 1; i++) {
     let minIndex = i;
@@ -12,4 +12,4 @@ function selection(arr) {
   return arr;
 }
 
-module.exports = selection;
+module.exports = selectionSort;
